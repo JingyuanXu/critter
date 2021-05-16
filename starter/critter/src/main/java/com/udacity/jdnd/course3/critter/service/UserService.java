@@ -17,6 +17,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
+@Transactional
 public class UserService {
 
     @Autowired
@@ -83,7 +84,7 @@ public class UserService {
         return employees;
     }
 
-    @Transactional
+
     public Employee save(Employee e) {
         return employeeRepository.save(e);
     }

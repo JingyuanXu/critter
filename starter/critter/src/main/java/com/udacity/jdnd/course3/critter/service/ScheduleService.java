@@ -17,6 +17,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
+@Transactional
 public class ScheduleService {
 
     @Autowired
@@ -76,7 +77,7 @@ public class ScheduleService {
         }
     }
 
-    @Transactional
+
     public Schedule save(Schedule schedule) {
         schedule = scheduleRepository.save(schedule);
         for (Employee employee : schedule.getEmployees()){

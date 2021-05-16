@@ -14,6 +14,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
+@Transactional
 public class PetService {
 
     @Autowired
@@ -49,7 +50,7 @@ public class PetService {
     }
 
 
-    @Transactional
+
     public Pet save(Pet p, Long ownerId) throws Exception {
         try{
             Customer owner = customerRepository.findById(ownerId).get();
